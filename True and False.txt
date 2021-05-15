@@ -1,0 +1,10 @@
+while True:
+	inputNum = input("Enter: ")
+	lastNum = int(inputNum) % 10
+	num = inputNum[:-1]
+	divideNum = int(num) % 7
+	if(lastNum == divideNum):
+		print("TRUE")
+		break
+	else:
+		print("FALSE")

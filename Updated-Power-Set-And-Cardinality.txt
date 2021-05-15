@@ -1,0 +1,60 @@
+import collections
+import os
+decision = True
+while decision:
+
+    gar = (input("Enter the elements separated by a comma: "))
+    gars = gar.split(",")
+    os.system('clear')
+    print("Your Current Elements: ", gars)
+    
+    menu = input("Choose your Action: \n1. Cardinality \n2. Power set \n3. Cardinality and Power set \nEnter Your Choice: ")
+    os.system('clear')
+    
+    if (menu == "1"):
+        
+        lists = gars
+        sets = collections.Counter(gars)
+        print("The Inputted Element: ", lists)
+        print(("Converted to Cardinality: "), sorted(sets.keys()))
+        print(("The Cardinality is: "), len(sets))
+        
+    elif (menu == "2"):
+        
+        print("The Inputted Element: ", gars)
+        def pset(set):
+            sets = [[]]
+            for a in set:
+                for sub in sets:
+                    sets = sets + [list(sub) + [a]]
+            return sets
+        powerset = gars
+        output = pset(powerset)
+        print("The Power set is: ", output)
+        
+    elif (menu == "3"):
+        
+        print("CARDINALITY:")
+        lists = gars
+        sets = collections.Counter(gars)
+        print("The Inputted Element: ", lists)
+        print(("Converted to Cardinality: "), sorted(sets.keys()))
+        print(("The Cardinality is: "), len(sets))
+        
+        print("\t")
+        
+        print("POWER SET: ")
+        def pset(set):
+            sets = [[]]
+            for a in set:
+                for sub in sets:
+                    sets = sets + [list(sub) + [a]]
+            return sets
+        powerset = gars
+        output = pset(powerset)
+        print("The Power set is: ", output)
+
+    
+    choice = input("Press [y] to continue or any key to exit: ")
+    decision = choice == "y" or choice == "Y"
+    os.system('clear')

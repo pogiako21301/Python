@@ -1,0 +1,49 @@
+import collections
+
+gar = (input("Enter the elements separated by a comma: "))
+gars = gar.split(",")
+print(gars)
+
+menu = input("Choose your Action: \n1. Cardinality \n2. Power set \n3. Cardinality and Power set \nEnter Your Choice: ")
+
+if (menu == "1"):
+    
+    lists = gars
+    sets = collections.Counter(gars)
+    print("The Inputted Element: ", lists)
+    print(("Converted to Cardinality: "), sorted(sets.keys()))
+    print(("The Cardinality is: "), len(sets))
+    
+elif (menu == "2"):
+    
+    def pset(set):
+        sets = [[]]
+        for a in set:
+            for sub in sets:
+                sets = sets + [list(sub) + [a]]
+        return sets
+    powerset = gars
+    output = pset(powerset)
+    print("The Power set is: ", output)
+    
+elif (menu == "3"):
+    
+    print("CARDINALITY:")
+    lists = gars
+    sets = collections.Counter(gars)
+    print("The Inputted Element: ", lists)
+    print(("Converted to Cardinality: "), sorted(sets.keys()))
+    print(("The Cardinality is: "), len(sets))
+    
+    print("\t")
+    
+    print("POWER SET: ")
+    def pset(set):
+        sets = [[]]
+        for a in set:
+            for sub in sets:
+                sets = sets + [list(sub) + [a]]
+        return sets
+    powerset = gars
+    output = pset(powerset)
+    print("The Power set is: ", output)

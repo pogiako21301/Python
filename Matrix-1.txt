@@ -1,0 +1,60 @@
+import os
+decision = True
+while decision:
+    A = []
+    r1 = int(input("Enter the Row for Matrix A: "))
+    c1 = int(input("Enter the column for Matrix A: "))
+    os.system('cls')
+    for x in range(0, r1):
+       row = []
+       for y in range(0, c1): 
+          row.append(int(input("Enter the elements by each: " + 'M' + str(x + 1) + str(y + 1) + ': ')))
+       A.append(row) 
+       
+    print("The Inputted Matrix: ", A)
+    print("Array In Matrix Form")
+    for x in range(r1):
+       for y in range(c1):
+          print(A[x][y], end = " ")
+       print()
+    
+    B = []
+    r2 = int(input("Enter the Row for Matrix B: "))
+    c2 = int(input("Enter the column for Matrix B: "))
+    os.system('cls')
+    for x in range(0, r2):
+       row = []
+       for y in range(0, c2): 
+          row.append(int(input("Enter the elements by each: " +'M' + str(x + 1) + str(y + 1) + ': ')))
+       B.append(row) 
+    print("The Inputted Matrix: ", B)
+    print("Array In Matrix Form")
+    for x in range(r2):
+       for y in range(c2):
+          print(B[x][y], end = " ")
+       print()
+    
+    menu = input("\n1.Addition \n2.Multiplication \nEnter Your choice: ")
+        
+    if (menu == "1"):
+        if ((r1,c1) == (r2,c2)):
+            print("Matrix are equal!")
+            result = [[A[i][j] + B[i][j] for j in range(len(A[0]))] for i in range(len(A))] 
+            for r in result: 
+                print(r)
+        else:
+            print("Matrix are not equal")
+            exit()
+                
+    elif (menu == "2"):
+        if (c1 == r2):
+            result = [[sum(A * B for A, B in zip(A_row, B_col))for B_col in zip(* B)] for A_row in A]
+            for r in result: 
+                print(r)
+        else:
+            print("Matrix are not equal")
+            exit()
+            
+    choice = input("Press [y] to continue or any key to exit: ")
+    decision = choice == "y" or choice == "Y"
+    os.system('cls')

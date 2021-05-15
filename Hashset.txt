@@ -1,0 +1,19 @@
+group1 = set()
+for x in range(3):
+    group1.add(input("Enter birth month " + str(x + 1) + ": "))
+group2 = set()
+for i in range(3):
+    group2.add(input("Enter birth month " + str(i + 1) + ": " ))
+print("Group 1:", group1)
+print("Group 2:", group2)
+self = set()
+self.add(input("Enter your birth month: "))
+union = group1|group2
+print("Union:", union)
+z = group1.intersection(group2)
+print("Intersection:", z)
+print("Difference:", group1 - group2)
+if self.issubset(union):
+    print("You have the same birth month with one of your classmates")
+else:
+    print("You do not have the same birth with all of your classmates")

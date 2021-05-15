@@ -1,0 +1,58 @@
+Activity #A - examples of function declaration and invocation with dif parameter initialization
+
+def gaaars(x):
+  return 10 + x
+
+print(gaaars(3))
+print(gaaars(5))
+
+def gars(a=10,b = 'Qwe'):
+    return a,b
+
+print(gars())
+
+def gars(a=10,b = 3000):
+    return a,b
+
+print(gars(32,19))
+
+Activity #B - 5 functions. 3 value returning | 2 Void
+
+def gars ():
+    print ("Garreeh Pogi")
+gars() #Void
+
+def gaaars ():
+    print ("Agik")
+gaaars() #Void
+
+def qwe(x):
+    print (x**2)
+
+qwe(300) #Value Returning
+
+def gars(x):
+    print (x*2)
+
+gars(200) #Value Returning
+
+def gars(x):
+    print (x+2)
+
+gars(33) #Value Returning
+
+Activity #c - List with minimum 3 elements swap their first and last element.
+
+gars = [-1,0,1,2]
+a, b = gars.index(2), gars.index(-1)
+gars[b], gars[a] = gars[a], gars[b]
+
+print(gars)
+
+Activity #D - List slice 
+
+hays = [-1, 0, 1, 2, 3, 4]
+gar = hays[2:-1]
+print(gar)
+
+

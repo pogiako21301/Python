@@ -1,0 +1,10 @@
+h = float(input("Enter Hour: "))
+m = float(input("Enter Minute: "))
+eh = float(input("Enter Elapsed Hour: "))
+em = float(input("Enter Elapsed Minute: "))
+h = h + eh  % (24 * 3600)
+m = m + em
+h %= 3600
+m %= 60
+h = m
+print("Current Time: %d:%d" % (h, m))
